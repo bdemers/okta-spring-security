@@ -12,13 +12,19 @@
                 url: '/troopers',
                 templateUrl: 'troopers/troopers-list.html',
                 controller: 'TroopersController',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                sp: {
+                    authenticate: true
+                }
             })
             .state('viewTrooper', {
                 url: '/troopers/:id/view',
                 templateUrl: 'troopers/trooper.html',
                 controller: 'TrooperController',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                sp: {
+                    authenticate: true
+                }
             });
     }
 })();

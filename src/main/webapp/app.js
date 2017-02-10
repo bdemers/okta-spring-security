@@ -17,14 +17,14 @@
  */
 
 angular.module('shiroExample', [
+  'stormpath',
+  'stormpath.templates',
   'ui.router',
   'ui.bootstrap',
   'ui.gravatar',
   'ngResource',
   'ngAnimate',
   'ngSanitize',
-  'stormpath',
-  'stormpath.templates',
   'angular-authz'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $userProvider, STORMPATH_CONFIG) {
@@ -39,6 +39,9 @@ angular.module('shiroExample', [
      this.  JSON will be the default in the next major release of the Angular SDK.
     */
     STORMPATH_CONFIG.FORM_CONTENT_TYPE = 'application/json';
+    STORMPATH_CONFIG.ENDPOINT_PREFIX = 'https://bdemers.apps.stormpath.io';
+    // STORMPATH_CONFIG.SOCIAL_LOGIN_REDIRECT_URI = '/stormpathCallback'
+    STORMPATH_CONFIG.AUTO_AUTHORIZED_URIS.push(new RegExp('/api'));
   })
   .run(function($stormpath,$rootScope,$state,authz, permissionsService){
 
