@@ -1,0 +1,109 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css);
+
+#okta-login-container {
+  margin: 0 auto;
+  max-width: 400px;
+  border: 1px solid silver;
+  padding: 20px;
+  box-shadow: 5px 5px 5px 0 silver;
+}
+
+#okta-login-container input {
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 5px;
+}
+
+#okta-login-container input[type=checkbox] {
+  width: 25px;
+}
+
+
+
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+}
+
+
+.custom-navbar {
+  min-height: 70px;
+}
+
+.custom-navbar-brand {
+  line-height: 45px !important;
+}
+
+.custom-pad-for-footer {
+  height: 40px;
+}
+.trooper-panel {
+  margin-left: auto;
+  margin-right: auto;
+
+  height: 480px !important;
+  width: 640px !important;
+  background: url(/images/stormtrooper_background_640.jpg) no-repeat !important;
+  /* copyright cc-0 */
+}
+
+.custom-trooper-container {
+  padding-right: 30px;
+  padding-bottom: 5px;
+}
+
+.trooper-table-font {
+  font-size: 22px;
+}
+
+.trooper-panel-body {
+  height: 100%;
+}
+
+#user-button {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.header-padding {
+  padding: 60px 15px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}

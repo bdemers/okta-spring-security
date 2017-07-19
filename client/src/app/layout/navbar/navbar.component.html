@@ -1,0 +1,18 @@
+<header>
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand custom-navbar-brand" href="#">
+    <img src="/assets/First_Order_Logo.png" copyright="cc-by-sa https://commons.wikimedia.org/wiki/User:JLanzer" class="d-inline-block align-top" alt="">
+    {{title}}
+  </a>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-nav mr-auto"></div>
+
+    <button *ngIf="!appComponent.user" class="btn btn-outline-success my-1" (click)="showLogin()">Login</button>
+    <button *ngIf="appComponent.user" class="btn btn-outline-danger my-1" (click)="appComponent.logout()">Logout</button>
+
+  </div>
+</nav>
+</header>

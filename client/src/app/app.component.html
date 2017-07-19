@@ -1,0 +1,15 @@
+<layout-navbar></layout-navbar>
+
+<div class="header-padding">
+  <div class="mt-3"></div>
+
+  <okta-login></okta-login>
+
+  <div *ngIf="user">
+    <!--<home></home>-->
+    <trooper-list></trooper-list>
+  </div>
+
+</div>
+
+<layout-footer></layout-footer>

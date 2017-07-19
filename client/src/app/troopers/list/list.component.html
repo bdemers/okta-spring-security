@@ -1,0 +1,24 @@
+<div class="container">
+
+  <h1>Stormtroopers</h1>
+  <small>{{bodyText}}</small>
+
+  <div class="panel panel-default">
+    <table id="troopers" class="table table-striped table-bordered " cellspacing="0" width="20%">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>TYPE</th>
+        <th>DETAILS</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let trooper of troopers">
+        <td>{{trooper.id}}</td>
+        <td>{{trooper.type}}</td>
+        <td><a ui-sref="viewTrooper({id:trooper.id})">View</a></td>
+
+      </tbody>
+    </table>
+  </div>
+</div>
