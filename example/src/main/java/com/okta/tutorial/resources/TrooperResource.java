@@ -42,7 +42,7 @@ public class TrooperResource {
     }
 
     @GetMapping
-    @PreAuthorize("#oauth2.clientHasRole('Test-Group')")
+    @PreAuthorize("#oauth2.clientHasRole('Test-Group') || #oauth2.hasScope('email')")
     public Collection<Stormtrooper> listTroopers() {
         return trooperDao.listStormtroopers();
     }

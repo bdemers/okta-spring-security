@@ -1,4 +1,4 @@
-package com.okta.tutorial;
+package com.okta.tutorial.oauth2;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.expression.method.MethodSecurityExpressionHandler;
