@@ -29,7 +29,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 
-
 @RestController
 @RequestMapping(path = "/troopers")
 public class TrooperResource {

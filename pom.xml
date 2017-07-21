@@ -24,7 +24,7 @@
     <artifactId>spring-ideas</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <name>Okta Spring Ideas</name>
-    <package>pom</package>
+    <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
