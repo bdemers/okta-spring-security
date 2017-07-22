@@ -26,7 +26,7 @@ import java.net.URL;
 @Configuration
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
-    @Value("#{ @environment['okta.oauth2.issuer'] ?: 'https://dev-259824.oktapreview.com/oauth2/ausar5cbq5TRRsbcJ0h7' }")
+    @Value("#{ @environment['okta.oauth2.issuer'] ?: 'https://dev-123456.oktapreview.com/oauth2/ausar5cbq5TRooicu812' }")
     protected String issuerUrl;
 
     @Value("#{ @environment['okta.oauth2.audience'] ?: 'all' }")

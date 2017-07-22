@@ -1,18 +1,46 @@
-stormpath-shiro-servlet-tutorial
-===
+okta-spring-security
+====================
 
-This project was genearted using the `stormpath-shiro-servlet-plugin-archetype`.
+This repo is still a little raw, and will be cleaned up before merging to master.
+Of interest:
 
-Before running this application, you must have your Stormpath secret key, if you do not already have one [start here](http://docs.stormpath.com/java/quickstart/#get-an-api-key). 
+- okta-spring-security-oauth is a Spring Boot starter use to configure an implicit flow access token validation.
 
-Start the web application via the command line using:
+- Example (is an example...)
+  -  example is a Spring-Boot example backend (based off a previous examples)
+  -  example/client is Angular front end
 
-```bash
-mvn jetty:run
+- Requires a custom Authorization Server
+
+Build it:
+
+From the root: `mvn install`
+
+Run the backend:
+``` bash
+cd example/
+mvn spring-boot:run \
+-Dokta.oauth2.issuer=https://dev-123456.oktapreview.com/oauth2/ausar5cbq5TRooicu812 \
+-Dokta.oauth2.audience=your-authorization-server-audience \
+-Dokta.oauth2.rolesClaim=custom-group-claim
 ```
 
-Then open your browser to http://localhost:8080
+**Note:** `okta.oauth2.rolesClaim` defaults to `groups`, so in your custom Authorization Server define a custom claim:
+- Name: 'groups'
+- Value Type: 'Groups'
+- Filter: Regex - `.*`
 
-Or deploy to Heroku:
+Run the example client:
+``` bash
+cd example/client
+npm install
+npm start
+```
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/bdemers/shiro-angular-example)
+Browse to: http://localhost:4200
+
+Up for review:
+code in: okta-spring-security-oauth2
+
+
+TODO: Needs tests (obviously)
