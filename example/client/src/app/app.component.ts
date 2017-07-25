@@ -19,31 +19,26 @@ export class AppComponent implements OnInit {
       (response) => {
 
         // i.e. authParams.responseType = 'id_token':
-        console.log("response:");
-        console.log(response);
-
-        console.log("response.claims:");
-        console.log(response.claims);
-
+        console.log("response:", response);
+        console.log("response[0].claims:", response[0].claims);
 
         // The user has successfully completed the authentication flow
         if (response.status === 'SUCCESS') {
 
           // Handle success when the widget is not configured for OIDC
 
-            if (response.type === 'SESSION_STEP_UP') {
-              // Session step up response
-              // If the widget is not configured for OIDC and the authentication type is SESSION_STEP_UP,
-              // the response will contain user metadata and a stepUp object with the url of the resource
-              // and a 'finish' function to navigate to that url
-              console.log(response.user);
-              console.log('Target resource url: ' + response.stepUp.url);
-              response.stepUp.finish();
-              return;
-            } else {
-              console.log(response.type)
-            }
-
+          if (response.type === 'SESSION_STEP_UP') {
+            // Session step up response
+            // If the widget is not configured for OIDC and the authentication type is SESSION_STEP_UP,
+            // the response will contain user metadata and a stepUp object with the url of the resource
+            // and a 'finish' function to navigate to that url
+            console.log(response.user);
+            console.log('Target resource url: ' + response.stepUp.url);
+            response.stepUp.finish();
+            return;
+          } else {
+            console.log(response.type)
+          }
 
           // this.oktaSignIn.tokenManager.add('my_id_token', response);
           this.user = response[0].claims.email;
@@ -55,11 +50,7 @@ export class AppComponent implements OnInit {
           // i.e. authParams.responseType = ['id_token', 'token']
           this.oktaSignIn.tokenManager.add('my_id_token', response[0]);
           this.oktaSignIn.tokenManager.add('my_access_token', response[1]);
-
         }
-
-
-
       },
       (error) => {
         console.error(error);
