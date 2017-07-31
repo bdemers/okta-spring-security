@@ -1,4 +1,4 @@
-package com.okta.spring.oauth2;
+package com.okta.spring.oauth;
 
 import org.springframework.beans.InvalidPropertyException;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,16 +26,16 @@ import java.net.URL;
 @Configuration
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
-    @Value("#{ @environment['okta.oauth2.issuer'] ?: 'https://dev-123456.oktapreview.com/oauth2/ausar5cbq5TRooicu812' }")
+    @Value("#{ @environment['okta.oauth.issuer'] ?: 'https://dev-123456.oktapreview.com/oauth2/ausar5cbq5TRooicu812' }")
     protected String issuerUrl;
 
-    @Value("#{ @environment['okta.oauth2.audience'] ?: 'all' }")
+    @Value("#{ @environment['okta.oauth.audience'] ?: 'all' }")
     protected String audience;
 
-    @Value("#{ @environment['okta.oauth2.scopeClaim'] ?: 'scp' }")
+    @Value("#{ @environment['okta.oauth.scopeClaim'] ?: 'scp' }")
     protected String scopeClaim;
 
-    @Value("#{ @environment['okta.oauth2.rolesClaim'] ?: 'groups' }")
+    @Value("#{ @environment['okta.oauth.rolesClaim'] ?: 'groups' }")
     protected String rolesClaim;
 
     @Override
