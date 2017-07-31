@@ -31,7 +31,7 @@
     </properties>
 
     <modules>
-        <module>okta-spring-security-oauth2</module>
+        <module>okta-spring-security</module>
         <module>example</module>
     </modules>
 
