@@ -20,12 +20,12 @@ Run the backend:
 ``` bash
 cd example/
 mvn spring-boot:run \
--Dokta.oauth2.issuer=https://dev-123456.oktapreview.com/oauth2/ausar5cbq5TRooicu812 \
--Dokta.oauth2.audience=your-authorization-server-audience \
--Dokta.oauth2.rolesClaim=custom-group-claim
+-Dokta.oauth.issuer=https://dev-123456.oktapreview.com/oauth2/ausar5cbq5TRooicu812 \
+-Dokta.oauth.audience=your-authorization-server-audience \
+-Dokta.oauth.rolesClaim=custom-group-claim
 ```
 
-**Note:** `okta.oauth2.rolesClaim` defaults to `groups`, so in your custom Authorization Server define a custom claim:
+**Note:** `okta.oauth.rolesClaim` defaults to `groups`, so in your custom Authorization Server define a custom claim:
 - Name: 'groups'
 - Value Type: 'Groups'
 - Filter: Regex - `.*`
@@ -40,7 +40,7 @@ npm start
 Browse to: http://localhost:4200
 
 Up for review:
-code in: okta-spring-security-oauth2
+code in: okta-spring-security-starter
 
 
 TODO: Needs tests (obviously)
